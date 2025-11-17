@@ -1,10 +1,11 @@
 package main
 
 import (
-	"github.com/puppygrrl/zen/dictionary"
+	"fmt"
+	"github.com/puppygrrl/zen/game"
 )
 
 func main() {
-	d := dictionary.New()
-	fmt.Println(d.GetRandomCommonWord())
+	g := game.New()
+	fmt.Println(g.Word())
 }
