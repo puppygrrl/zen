@@ -26,15 +26,15 @@ func (g *Game) Word() string {
 	return g.word
 }
 
-func (g *Game) Guess(word string) string {
-	if word == g.word {
+func Guess(word string, secret string) string {
+	if word == secret {
 		return ""
 	}
 	hint := ""
 	for pos, char := range word {
-		if g.word[pos] == byte(char) {
+		if secret[pos] == byte(char) {
 			hint += "1" // green
-		} else if strings.Contains(word, string(char)) {
+		} else if strings.Contains(secret, string(char)) {
 			hint += "2" // yellow
 		} else {
 			hint += "0" // grey
